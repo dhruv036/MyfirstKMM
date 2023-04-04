@@ -1,8 +1,8 @@
-package com.dhruv.myfirstkmm.Domain
+package com.dhruv.myfirstkmm.Domain.time
 
 import kotlinx.datetime.*
 
-class DateTimeUtil {
+object DateTimeUtil {
 
     fun now() : LocalDateTime{
         return Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())

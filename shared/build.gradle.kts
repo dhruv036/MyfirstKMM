@@ -2,6 +2,9 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    kotlin("plugin.serialization") version "1.5.30"
 
 }
 
@@ -29,12 +32,15 @@ kotlin {
             dependencies {
                 implementation("com.squareup.sqldelight:runtime:1.5.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")  // JSON serialization
+
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
+
         }
         val androidMain by getting {
             dependencies{
@@ -81,4 +87,5 @@ android {
         minSdk = 24
         targetSdk = 33
     }
+
 }

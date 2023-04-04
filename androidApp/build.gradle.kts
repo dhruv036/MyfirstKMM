@@ -4,12 +4,15 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
+
     id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "com.dhruv.myfirstkmm.android"
     compileSdk = 33
+
     defaultConfig {
         applicationId = "com.dhruv.myfirstkmm.android"
         minSdk = 24
@@ -26,6 +29,7 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
+
 
     packagingOptions {
         resources {
