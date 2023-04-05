@@ -7,7 +7,7 @@ import com.dhruv.myfirstkmm.Domain.time.DateTimeUtil
 import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.LocalDateTime
 
-class SqlDelightDataSource(db: NoteDatabase) : NoteDataSource {
+class SqlDelightNoteDataSource(db: NoteDatabase) : NoteDataSource {
     private val queries = db.noteQueries
     override suspend fun insertNote(note: Note) {
             queries.insertNote(

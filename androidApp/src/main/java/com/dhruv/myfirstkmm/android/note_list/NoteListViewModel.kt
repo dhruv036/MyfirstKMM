@@ -5,7 +5,7 @@ import android.graphics.Color
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dhruv.myfirstkmm.Data.note.SearchNote
+import com.dhruv.myfirstkmm.Data.note.SearchNotes
 import com.dhruv.myfirstkmm.Domain.note.Note
 import com.dhruv.myfirstkmm.Domain.note.NoteDataSource
 import com.dhruv.myfirstkmm.Domain.time.DateTimeUtil
@@ -31,22 +31,22 @@ class NoteListViewModel @Inject constructor(
     private val saveStateHandel : SavedStateHandle
 ) : ViewModel() {
 
-    private val searchNotes = SearchNote()
+    private val searchNotes = SearchNotes()
 
 
     init {
         viewModelScope.launch {
-             (1..10).forEach {
-                noteDataSource.insertNote(
-                    Note(
-                        id = it.toLong(),
-                        title = "Note $it",
-                        content = "My note is good $it",
-                        colorHex = BabyBlueHex,
-                        created = DateTimeUtil.now()
-                    )
-                )
-             }
+//             (1..10).forEach {
+//                noteDataSource.insertNote(
+//                    Note(
+//                        id = it.toLong(),
+//                        title = "Note $it",
+//                        content = "My note is good $it",
+//                        colorHex = BabyBlueHex,
+//                        created = DateTimeUtil.now()
+//                    )
+//                )
+//             }
         }
     }
 

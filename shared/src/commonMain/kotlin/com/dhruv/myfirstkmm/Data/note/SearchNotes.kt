@@ -3,8 +3,7 @@ package com.dhruv.myfirstkmm.Data.note
 import com.dhruv.myfirstkmm.Domain.note.Note
 import com.dhruv.myfirstkmm.Domain.time.DateTimeUtil
 
-class SearchNote {
-
+class SearchNotes {
     fun execute(notes: List<Note>, query: String) :List<Note>{
         if (query.isBlank())
             return notes

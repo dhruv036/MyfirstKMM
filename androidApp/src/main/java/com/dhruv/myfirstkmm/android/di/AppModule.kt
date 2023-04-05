@@ -3,7 +3,8 @@ package com.dhruv.myfirstkmm.android.di
 import android.app.Application
 import com.dhruv.NoteAppKMM.database.NoteDatabase
 import com.dhruv.myfirstkmm.Data.local.DatabaseDriverFactory
-import com.dhruv.myfirstkmm.Data.note.SqlDelightDataSource
+
+import com.dhruv.myfirstkmm.Data.note.SqlDelightNoteDataSource
 import com.dhruv.myfirstkmm.Domain.note.NoteDataSource
 import com.squareup.sqldelight.db.SqlDriver
 import dagger.Module
@@ -24,6 +25,6 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDataSource(sqldriver : SqlDriver) : NoteDataSource{
-        return SqlDelightDataSource(NoteDatabase(sqldriver))
+        return SqlDelightNoteDataSource(NoteDatabase(sqldriver))
     }
 }
